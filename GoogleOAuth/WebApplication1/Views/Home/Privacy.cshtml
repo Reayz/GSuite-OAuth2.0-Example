@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+@model GSuiteUserData
+
+<h1>User Profile</h1>
+
+@if (Model != null)
+{
+    <div class="media">
+        <div class="media-body">
+
+            <div class="form-group item">
+                <label class="control-label">User ID: </label>
+                <label class="control-label">@Model.UserId</label>
+                <br>
+            </div>
+            <div class="form-group item">
+                <label class="control-label">Full Name: </label>
+                <label class="control-label">@Model.FullName</label>
+                <br>
+            </div>
+            <div class="form-group item">
+                <label class="control-label">Email: </label>
+                <label class="control-label">@Model.Email</label>
+                <br>
+            </div>
+            <div class="form-group item">
+                <label class="control-label">Profile picture: </label> <br> <br>
+                <img src="@(Model.UserImageUrl)" alt="broken" />
+                <br>
+            </div>
+        </div>
+    </div>
+
+}
+
+<script>
+    var email = "@Model.Email";
+    console.log(email);
+    localStorage.setItem("EmailKey", email);
+    var email2 = localStorage.getItem("EmailKey");
+    console.log(email2);
+</script>
